@@ -1,0 +1,26 @@
+{
+    "name": "hub/untitled1",
+    "authors": [
+        {
+            "name": "HubertMarzec9",
+            "email": "33607676+HubertMarzec9@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "illuminate/collections": "^10.39"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.30"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
