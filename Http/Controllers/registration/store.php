@@ -41,7 +41,7 @@ if($user){
         password_hash($user['password'], PASSWORD_BCRYPT)
     ]);
 
-    login($user);
+    (new Core\Authenticator)->login($user);
 
     header('location: /');
 }

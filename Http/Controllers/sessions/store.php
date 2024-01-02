@@ -8,9 +8,12 @@ $form = LoginForm::validate($attributes = [
     'password' => $_POST['password']
 ]);
 
-if ((new Authenticator)->attempt($attributes['email'], $attributes['password'])) {
+$auth = (new Authenticator);
+
+if ($auth->attempt($attributes['email'], $attributes['password'])) {
     redirect('/');
 }
+
 
 $form->setError('email', 'No matching account')
      ->throw();

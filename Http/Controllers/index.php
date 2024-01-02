@@ -1,6 +1,6 @@
 <?php
 
 view('index',[
-    'heading' => 'Home'
+    'heading' => 'Welcome to our Home Page'
 ]);
 

@@ -4,10 +4,18 @@
 
 <?php require('partials/banner.php') ?>
 
-    <main>
-        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            <!-- Your content -->
+<!-- Main Content -->
+<div class="container mx-auto flex-1">
+    <div class="max-w-lg mx-auto main-bg p-8 rounded shadow-md">
+
+        <div class="container mx-auto flex-1 p-8 text-white">
+            <p>Welcome to FutureInBox - a platform where the future of your correspondence becomes the present.</p>
+            <p>Plan and receive important messages at precisely defined times.</p>
+            <p>Simple login panel, email confirmation, and you're all set!</p>
+            <p>Plan your communication with FutureInBox! 📬🚀</p>
         </div>
-    </main>
+
+    </div>
+</div>
 
 <?php require('partials/footer.php') ?>

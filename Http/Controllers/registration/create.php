@@ -1,5 +1,4 @@
 <?php
 
 view('registration/create',[
-
 ]);
