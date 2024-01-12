@@ -15,37 +15,62 @@
             </button>
             <!-- Dodane mobilne menu -->
             <div id="mobile-menu">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">Login</a>
-                <a href="#" class="nav-link">Register</a>
+                <a href="/"
+                   class="<?php echo urlIs('/') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
+                <?php if (!isset($_SESSION['user'])) : ?>
+                    <a href="/login"
+                       class="<?php echo urlIs('/login') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
+                    <a href="/registration"
+                       class="<?php echo urlIs('/registration') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Register</a>
+                <?php else : ?>
+
+                    <a href="/create-email"
+                       class="<?php echo urlIs('/create-email') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Create
+                        email</a>
+                    <a href="/scheduled-emails"
+                       class="<?php echo urlIs('/scheduled-emails') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Scheduled
+                        emails</a>
+                    <a href="/account-settings"
+                       class="<?php echo urlIs('/account-settings') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Account
+                        settings</a>
+
+
+                    <form method="POST" action="/login">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button
+                                class="<?php echo urlIs('/registration') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                            Log out
+                        </button>
+                    </form>
+                <?php endif; ?>
             </div>
         </div>
         <div class="hidden md:flex">
 
             <a href="/"
-               class="<?php echo urlIs('/') ? "bg-lime-700 text-white" : "text-gray-300 " ?>  hover:bg-lime-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
+               class="<?php echo urlIs('/') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
             <?php if (!isset($_SESSION['user'])) : ?>
                 <a href="/login"
-                   class="<?php echo urlIs('/login') ? "bg-lime-700 text-white" : "text-gray-300 " ?>  hover:bg-lime-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
+                   class="<?php echo urlIs('/login') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
                 <a href="/registration"
-                   class="<?php echo urlIs('/registration') ? "bg-lime-700 text-white" : "text-gray-300 " ?>  hover:bg-lime-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Register</a>
+                   class="<?php echo urlIs('/registration') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Register</a>
             <?php else : ?>
 
                 <a href="/create-email"
-                   class="<?php echo urlIs('/create-email') ? "bg-lime-700 text-white" : "text-gray-300 " ?>  hover:bg-lime-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Create
+                   class="<?php echo urlIs('/create-email') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Create
                     email</a>
                 <a href="/scheduled-emails"
-                   class="<?php echo urlIs('/scheduled-emails') ? "bg-lime-700 text-white" : "text-gray-300 " ?>  hover:bg-lime-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Scheduled
+                   class="<?php echo urlIs('/scheduled-emails') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Scheduled
                     emails</a>
                 <a href="/account-settings"
-                   class="<?php echo urlIs('/account-settings') ? "bg-lime-700 text-white" : "text-gray-300 " ?>  hover:bg-lime-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Account
+                   class="<?php echo urlIs('/account-settings') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Account
                     settings</a>
 
 
                 <form method="POST" action="/login">
                     <input type="hidden" name="_method" value="DELETE">
                     <button
-                            class="<?php echo urlIs('/registration') ? "bg-lime-700 text-white" : "text-gray-300 " ?>  hover:bg-lime-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                            class="<?php echo urlIs('/registration') ? "bg-blue-300 text-white" : "text-gray-300 " ?>  hover:bg-blue-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
                         Log out
                     </button>
                 </form>

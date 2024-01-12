@@ -5,8 +5,8 @@
 <?php require(__DIR__ . '/../partials/nav.php') ?>
 
 <!-- Main Content -->
-<div class="container mx-auto flex-1">
-    <div class="max-w-lg mx-auto main-bg p-8 rounded shadow-md">
+<div class="container mx-auto flex-1 relative">
+    <div class="max-w-lg mx-auto main-bg p-8 rounded shadow-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <h1 class="text-3xl font-bold main-text mb-6">Welcome to Future In Box</h1>
 
         <!-- Login Form -->
@@ -25,7 +25,7 @@
                 <input type="password" id="password" name="password" class="form-input mt-1 block w-full" required autocomplete="current-password">
             </div>
 
-            <button type="submit" class="submit-btn py-2 px-4 rounded bg-lime-700 text-white hover:bg-lime-600">Login</button>
+            <button type="submit" class="submit-btn py-2 px-4 rounded bg-blue-300 text-white hover:bg-blue-400">Login</button>
         </form>
 
         <?php if (isset($errors)) : ?>
