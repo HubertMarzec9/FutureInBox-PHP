@@ -12,4 +12,8 @@ class Validator{
     {
         return filter_var($value,FILTER_SANITIZE_EMAIL);
     }
+
+    public static function date($value){
+        return filter_var($value,);
+    }
 }
