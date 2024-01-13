@@ -36,9 +36,12 @@ if($user){
         'password' => $_POST['password']
     ];
 
-    $db->query('INSERT INTO users (email, password) VALUES (?, ?)', [
+    $verification_token = sha1(uniqid());
+
+    $db->query('INSERT INTO users (email, password, verification_token) VALUES (?, ?, ?)', [
         $user['email'],
-        password_hash($user['password'], PASSWORD_BCRYPT)
+        password_hash($user['password'], PASSWORD_BCRYPT),
+        $verification_token,
     ]);
 
     (new Core\Authenticator)->login($user);
