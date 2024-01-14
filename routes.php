@@ -28,9 +28,10 @@ $router->delete('/login', 'sessions/destroy.php')->only('auth');
 //Settings*
 
 $router->get('/account-settings', 'account/index.php')->only('auth');
-$router->get('/change-password', 'account/index.php')->only('auth');
-$router->get('/change-email', 'account/email/index.php')->only('auth');
-$router->get('/confirm-email', 'account/email/index.php')->only('auth');
+$router->get('/change-password', 'account/index.php')->only('auth'); //TODO
+$router->get('/change-email', 'account/email/index.php')->only('auth'); //TODO
+$router->get('/confirm-email', 'account/email/index.php')->only('auth'); //TODO
+$router->post('/confirm-email', 'account/email/confirm.php')->only('auth');
 
 // Emails*
 

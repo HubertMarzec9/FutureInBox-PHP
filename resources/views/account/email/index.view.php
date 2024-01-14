@@ -11,8 +11,14 @@
             <div class="container mx-auto flex-1 p-8 ">
 
                 <p class="mb-2"><a href="/change-email">Change email</a></p>
-                <p class="mb-2"><a href="/confirm-email">Confirm email</a></p>
 
+                <p class="mb-2">
+                <form action="/confirm-email" method="POST">
+                    <button type="submit" class="submit-btn py-2 px-4 rounded bg-blue-300 text-white hover:bg-blue-400">
+                        Confirm email
+                    </button>
+                </form>
+                </p>
             </div>
 
         </div>
