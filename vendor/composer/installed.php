@@ -3,7 +3,7 @@
         'name' => 'hub/untitled1',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd5e2ce6d3b02165b3719ac26118443440c5cd4b9',
+        'reference' => 'b92d49851b958a7b2a028f8604bd48e8801fc676',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -49,7 +49,7 @@
         'hub/untitled1' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd5e2ce6d3b02165b3719ac26118443440c5cd4b9',
+            'reference' => 'b92d49851b958a7b2a028f8604bd48e8801fc676',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

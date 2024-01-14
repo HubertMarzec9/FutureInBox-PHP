@@ -44,4 +44,23 @@ class Mailer
             echo "Błąd: {$this->mailer->ErrorInfo}";
         }
     }
+
+    public function sendVerificationEmail($token): void
+    {
+        // Treść wiadomości z linkiem potwierdzającym
+        $subject = 'Potwierdzenie rejestracji';
+        $body = "Kliknij poniższy link, aby potwierdzić swoją rejestrację: localhost:8000?token=$token";
+
+        // Wysłanie wiadomości
+        $this->mailer->isHTML(true);
+        $this->mailer->Subject = $subject;
+        $this->mailer->Body = $body;
+
+        try {
+            $this->mailer->send();
+            echo 'Wiadomość została wysłana';
+        } catch (Exception $e) {
+            echo "Błąd: {$this->mailer->ErrorInfo}";
+        }
+    }
 }
