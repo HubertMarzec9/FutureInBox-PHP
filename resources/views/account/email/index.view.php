@@ -10,7 +10,19 @@
 
             <div class="container mx-auto flex-1 p-8 ">
 
-                <p class="mb-2"><a href="/change-email">Change email</a></p>
+                <p class="mb-2">
+                <form action="/change-email" method="POST">
+                    <input type="hidden" name="_method" value="PATCH">
+                    <label>
+                        <input type="email" name="email">
+                    </label>
+                    <button type="submit" class="submit-btn py-2 px-4 rounded bg-blue-300 text-white hover:bg-blue-400">
+                        Change email
+                    </button>
+                </form>
+                </p>
+
+                <br>
 
                 <p class="mb-2">
                 <form action="/confirm-email" method="POST">
@@ -19,6 +31,12 @@
                     </button>
                 </form>
                 </p>
+
+                <?php if (isset($msg)) : ?>
+                    <p class="mb-2 mt-4 text-red-500">
+                        <?= $msg ?>
+                    </p>
+                <?php endif;?>
             </div>
 
         </div>

@@ -47,20 +47,32 @@ class Mailer
 
     public function sendVerificationEmail($token): void
     {
-        // Treść wiadomości z linkiem potwierdzającym
         $subject = 'Potwierdzenie rejestracji';
-        $body = "Kliknij poniższy link, aby potwierdzić swoją rejestrację: localhost:8000?token=$token";
+        $body = "Kliknij poniższy link, aby potwierdzić swoją rejestrację: <br> localhost:8000/confirm?token=$token";
 
-        // Wysłanie wiadomości
         $this->mailer->isHTML(true);
         $this->mailer->Subject = $subject;
         $this->mailer->Body = $body;
 
         try {
             $this->mailer->send();
-            echo 'Wiadomość została wysłana';
         } catch (Exception $e) {
-            echo "Błąd: {$this->mailer->ErrorInfo}";
+            abort($this->mailer->ErrorInfo);
+        }
+    }
+    public function sendChangeEmail($token): void
+    {
+        $subject = 'Potwierdzenie zmiany email';
+        $body = "Kliknij poniższy link, aby potwierdzić zmiane email: <br> localhost:8000/change?token=$token";
+
+        $this->mailer->isHTML(true);
+        $this->mailer->Subject = $subject;
+        $this->mailer->Body = $body;
+
+        try {
+            $this->mailer->send();
+        } catch (Exception $e) {
+            abort($this->mailer->ErrorInfo);
         }
     }
 }

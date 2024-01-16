@@ -9,6 +9,7 @@ class Middleware
     public const MAP = [
         'guest' => Guest::class,
         'auth' => Auth::class,
+        'verify' => Verify::class,
     ];
 
     /**
@@ -16,8 +17,6 @@ class Middleware
      */
     public static function resolve($key)
     {
-
-
         if($key){
 
             $middleware = static::MAP[$key] ?? false;
