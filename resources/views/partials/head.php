@@ -5,47 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+
     <style>
         body {
-            background-color: #000000; /* Zmiana koloru tła strony na czarny */
+            background-color: #000000;
         }
 
         .nav-bg {
-            background-color: #343a40; /* Ciemny kolor tła nawigacji */
+            background-color: #343a40;
         }
 
         .nav-link {
-            color: #f0f0f0; /* Zmiana koloru tekstu nawigacji na jasnoszary */
+            color: #f0f0f0;
         }
 
         .main-bg {
-            background-color: #e0e0e0; /* Zmiana koloru tła sekcji głównej na szary */
+            background-color: #e0e0e0;
         }
 
         .main-text {
-            color: #000000; /* Zmiana koloru tekstu sekcji głównej na czarny */
+            color: #000000;
         }
 
         .form-input {
-            border-color: #00a0ff; /* Zmiana koloru obramowania inputa na niebieski */
-            color: #808080; /* Zmiana koloru tekstu inputa na szary */
+            border-color: #00a0ff;
+            color: #808080;
         }
 
         .submit-btn {
-            background-color: #00a0ff; /* Zmiana koloru tła przycisku submit na niebieski */
-            color: #ffffff; /* Zmiana koloru tekstu przycisku submit na biały */
+            background-color: #00a0ff;
+            color: #ffffff;
         }
 
         .submit-btn:hover {
-            background-color: #0056b3; /* Zmiana koloru tła przycisku submit po najechaniu myszką */
+            background-color: #0056b3;
         }
 
         .login-link {
-            color: #00a0ff; /* Zmiana koloru tekstu linku logowania na niebieski */
+            color: #00a0ff;
         }
 
         .footer-bg {
-            background-color: #343a40; /* Ciemny kolor tła stopki */
+            background-color: #343a40;
         }
 
         #mobile-menu {
@@ -53,7 +56,7 @@
             position: absolute;
             top: 56px;
             right: 0;
-            background-color: #343a40; /* Ciemny kolor tła mobilnego menu */
+            background-color: #343a40;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
@@ -61,7 +64,7 @@
         #mobile-menu a {
             display: block;
             padding: 8px 16px;
-            color: #ffffff; /* Kolor tekstu mobilnego menu */
+            color: #ffffff;
             text-decoration: none;
         }
 
@@ -81,7 +84,24 @@
             text-align: center;
             margin-bottom: 20px;
         }
+
+        .grecaptcha-badge {
+            width: 70px !important;
+            overflow: hidden !important;
+            transition: all 0.3s ease !important;
+            right: 1px !important;
+        }
+
+        .grecaptcha-badge:hover {
+            width: 256px !important;
+        }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("form").submit();
+        }
+    </script>
     <title>Future In Box</title>
 </head>
 

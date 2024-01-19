@@ -48,6 +48,10 @@ class ComposerStaticInit85e1ec93005c97886dab0e4464089c38
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
         ),
+        'R' => 
+        array (
+            'ReCaptcha\\' => 10,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -148,6 +152,10 @@ class ComposerStaticInit85e1ec93005c97886dab0e4464089c38
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'ReCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/recaptcha/src/ReCaptcha',
         ),
         'Psr\\SimpleCache\\' => 
         array (

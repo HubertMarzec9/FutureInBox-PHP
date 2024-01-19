@@ -8,6 +8,15 @@ $db = App::resolve(Database::class);
 
 $errors = [];
 
+// Check the validity of reCAPTCHA token
+$response = $_POST['g-recaptcha-response'];
+$result = verifyRecaptcha($response, '6LdOSFUpAAAAAA6hpWPa0orxZji6CL3dx1YOw398');
+
+// If reCAPTCHA is not verified, terminate the script
+if (!$result['success']) {
+    $errors['reCaptcha'] = 'ReCAPTCHA not verified';
+}
+
 if (!Validator::string($_POST['title'], 1, 255)) {
     $errors['body'] = 'Title is required and Title cant be more than 255 char';
 }
