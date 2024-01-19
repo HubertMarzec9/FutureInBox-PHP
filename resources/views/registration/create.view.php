@@ -2,42 +2,42 @@
 
 <?php require(__DIR__ . '/../partials/nav.php') ?>
 
-<!-- Main Content -->
-<div class="container mx-auto flex-1 relative">
-    <div class="max-w-lg mx-auto main-bg p-8 rounded shadow-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <h1 class="text-3xl font-bold main-text mb-6">Welcome to Future In Box</h1>
+<?php require(__DIR__ . '/../partials/banner.php') ?>
 
-        <!-- Registration Form -->
-        <form class="space-y-6" action="/registration" method="POST">
+<h1 class="text-3xl font-bold main-text mb-6">Welcome to Future In Box</h1>
 
-            <div class="mb-4">
-                <label for="email" class="block text-sm font-medium input-label">Email</label>
-                <input type="email" id="email" name="email" class="form-input mt-1 block w-full" required>
-            </div>
+<!-- Registration Form -->
+<form class="space-y-6" action="/registration" method="POST" id="form">
 
-            <div class="mb-4">
-                <label for="password" class="block text-sm font-medium input-label">Password</label>
-                <input type="password" id="password" name="password" class="form-input mt-1 block w-full" required>
-            </div>
-
-            <button type="submit" class="submit-btn py-2 px-4 rounded bg-blue-300 text-white hover:bg-blue-400">
-                Register
-            </button>
-        </form>
-
-        <?php if (isset($errors)) : ?>
-            <?php foreach ($errors as $error) : ?>
-                <p class="text-red-500 mt-4">
-                    <?= $error ?>
-                </p>
-            <?php endforeach; ?>
-        <?php endif ?>
-
-        <div class="mt-4">
-            <p class="footer-text">Already have an account? <a href="/login" class="login-link">Login here</a></p>
-        </div>
+    <div class="mb-4">
+        <label for="email" class="block text-sm font-medium input-label">Email</label>
+        <input type="email" id="email" name="email" class="form-input mt-1 block w-full" required>
     </div>
+
+    <div class="mb-4">
+        <label for="password" class="block text-sm font-medium input-label">Password</label>
+        <input type="password" id="password" name="password" class="form-input mt-1 block w-full" required>
+    </div>
+
+    <button type="submit" class="g-recaptcha submit-btn py-2 px-4 rounded bg-blue-300 text-white hover:bg-blue-400"
+            data-sitekey="6LdOSFUpAAAAAAE_0T-ncJxUwzsmLNpg-_MM0WEM"
+            data-callback='onSubmit'
+            data-action='submit'>Register
+    </button>
+</form>
+
+<?php if (isset($errors)) : ?>
+    <?php foreach ($errors as $error) : ?>
+        <p class="text-red-500 mt-4">
+            <?= $error ?>
+        </p>
+    <?php endforeach; ?>
+<?php endif ?>
+
+<div class="mt-4">
+    <p class="footer-text">Already have an account? <a href="/login" class="login-link">Login here</a></p>
 </div>
+
 
 <?php require(__DIR__ . '/../partials/footer.php') ?>
 

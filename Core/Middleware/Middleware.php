@@ -10,6 +10,7 @@ class Middleware
         'guest' => Guest::class,
         'auth' => Auth::class,
         'verify' => Verify::class,
+        'noVerify' => NoVerify::class,
     ];
 
     /**

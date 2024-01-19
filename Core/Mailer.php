@@ -75,4 +75,20 @@ class Mailer
             abort($this->mailer->ErrorInfo);
         }
     }
+
+    public function sendResetPassword($token): void
+    {
+        $subject = 'Potwierdzenie zmiany hasla';
+        $body = "Kliknij poniższy link, aby zmienic haslo: <br> localhost:8000/reset?token=$token";
+
+        $this->mailer->isHTML(true);
+        $this->mailer->Subject = $subject;
+        $this->mailer->Body = $body;
+
+        try {
+            $this->mailer->send();
+        } catch (Exception $e) {
+            abort($this->mailer->ErrorInfo);
+        }
+    }
 }

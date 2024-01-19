@@ -26,8 +26,16 @@ class Authenticator
 
     public function login($user): void
     {
+        $is_verified = App::resolve(Database::class)
+            ->query('select is_verified from users where email = ?', [
+                $user['email']
+            ])->find();
+
+        $is_verified = $is_verified['is_verified'];
+
         $_SESSION['user'] = [
-            'email' => $user['email']
+            'email' => $user['email'],
+            'is_verified' => $is_verified
         ];
 
         session_regenerate_id(true);

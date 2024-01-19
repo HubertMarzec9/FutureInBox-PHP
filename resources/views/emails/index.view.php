@@ -4,21 +4,20 @@
 
 <?php require(__DIR__ . '/../partials/banner.php') ?>
 
-    <!-- Main Content -->
-    <div class="container mx-auto flex-1 relative">
-        <div class="max-w-lg mx-auto main-bg p-8 rounded shadow-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<div class="container mx-auto flex-1 p-8">
 
-            <div class="container mx-auto flex-1 p-8 ">
+    <?php if (empty($emails)) : ?>
+        <p class="text-lg font-bold text-gray-800">No emails available.</p>
+    <?php else : ?>
+        <ol class="list-decimal list-inside">
+            <?php foreach ($emails as $email) : ?>
+                <li class="text-blue-500 hover:underline mb-2">
+                    <a href="/email?id=<?= $email['id'] ?>"><?= $email['title'] ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ol>
+    <?php endif; ?>
 
-                <?php foreach ($emails as $email) :?>
-                    <p>
-                        <a href="/email?id=<?=$email['id'] ?>" ><?= $email['title']?></a>
-                    </p>
-                <?php endforeach; ?>
-
-            </div>
-
-        </div>
-    </div>
+</div>
 
 <?php require(__DIR__ . '/../partials/footer.php') ?>

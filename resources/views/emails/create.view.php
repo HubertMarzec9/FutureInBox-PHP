@@ -10,14 +10,10 @@
         }
     </style>
 
-    <!-- Main Content -->
-    <div class="container mx-auto flex-1 relative">
-        <div class="max-w-lg mx-auto main-bg p-8 rounded shadow-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-
             <h1 class="text-3xl font-bold main-text mb-6">Welcome to Future In Box</h1>
 
             <!-- Login Form -->
-            <form class="space-y-6" action="/email" method="POST">
+            <form class="space-y-6" action="/email" method="POST" id="form">
 
                 <div class="mb-4">
                     <label for="title" class="block text-sm font-medium input-label">Title</label>
@@ -36,9 +32,10 @@
                     <input type="date" id="date" name="date" class="form-input mt-1 block w-full" required>
                 </div>
 
-                <button type="submit" class="submit-btn py-2 px-4 rounded bg-blue-300 text-white hover:bg-blue-400">
-                    Add
-                </button>
+                <button type="submit" class="g-recaptcha submit-btn py-2 px-4 rounded bg-blue-300 text-white hover:bg-blue-400"
+                        data-sitekey="6LdOSFUpAAAAAAE_0T-ncJxUwzsmLNpg-_MM0WEM"
+                        data-callback='onSubmit'
+                        data-action='submit'>Add</button>
             </form>
 
             <?php if (isset($errors)) : ?>
@@ -49,8 +46,5 @@
                 <?php endforeach; ?>
             <?php endif ?>
 
-        </div>
-    </div>
-    </div>
-
+</div>
 <?php require(__DIR__ . '/../partials/footer.php') ?>

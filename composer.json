@@ -9,7 +9,9 @@
     "require": {
         "illuminate/collections": "^10.39",
         "phpmailer/phpmailer": "^6.5",
-      "ext-pdo": "*"
+        "google/recaptcha": "^1.3",
+      "ext-pdo": "*",
+      "ext-curl": "*"
     },
     "autoload": {
         "psr-4": {
